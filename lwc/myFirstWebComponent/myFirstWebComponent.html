@@ -1,0 +1,61 @@
+<template>
+    <lightning-card title="Test Mockup" icon-name="custom:custom14" style="border: 1px solid black;">
+      
+         
+         <div style="border:1px solid black ; margin-left:40px; width: 400px;">
+            
+               {name} &nbsp; &nbsp; &nbsp; &nbsp; {userId}
+            
+         </div>
+      
+
+      <right>
+         <div style="border:1px solid black ; margin-left:auto; margin-right:0; width: 400px;">
+            
+               <lightning-button label="Create product" variant="brand" onclick={buttonFunc}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <lightning-button label="Cart" variant="brand" onclick={buttonFuncc}></lightning-button>
+            
+         </div>
+      </right>
+
+      
+        <div class="input form" style="margin:auto; width: 350px;">
+         <div onkeyup={handleKeyUp}>
+            <lightning-input
+                name="enter-search"
+                
+                type="search"
+            ></lightning-input>
+         </div>
+         <p if:true={queryTerm}>
+            Searched for {queryTerm}!
+         </p>
+        </div>
+
+<Div class="filterandlist" style="display: inline-block;">
+      
+         <div class="FilterForm" style="float:left; margin-left:10px; margin-right:50px; border: 1px solid black; height: 400px; width: 150px">
+            <h2>&nbsp; &nbsp;Filter</h2>
+            <p>Type</p>
+          <ul>
+            <li>-  Type 1</li>
+            <li>-  Type 2</li>
+            <li>-  Type 3</li>
+          </ul>
+            <p>Family</p>
+          <ul>
+            <li>-  Family 1</li>
+            <li>-  Family 2</li>
+            <li>-  Family 3</li>
+          </ul>
+         </div>
+         <div style=" width:1000px; height:400px; border: 1px solid black; margin:10px; float:right">
+            
+         </div>
+   </Div>
+      <div class="Button 1 and 2">
+         <lightning-button  onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+         <lightning-button  onclick={handleClick} class="slds-m-left_x-smalll"></lightning-button>
+      </div>
+     </lightning-card>
+</template>
