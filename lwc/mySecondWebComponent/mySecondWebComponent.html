@@ -17,9 +17,16 @@
                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Modal Box Example</h2>
                    </header>
                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-                       <center><h2><b>Welcome to Salesforce Code Crack</b></h2><br/>
-                           <p>Happy Learning!!!</p>
-                       </center>
+                    <lightning-record-view-form
+                    record-id="a022X00000juWaEQAU"
+                    object-api-name="Product__c">
+                       <div class="slds-box">
+                          <lightning-output-field field-name="Name"></lightning-output-field>
+                          <lightning-output-field field-name="Decription__c"></lightning-output-field>
+                          <lightning-output-field field-name="Type__c"></lightning-output-field>
+                          <lightning-output-field field-name="Family__c"></lightning-output-field>
+                       </div>
+                 </lightning-record-view-form>
                    </div>
                    <footer class="slds-modal__footer">
                        <lightning-button label="Cancel" variant="neutral" onclick={closeModal}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;

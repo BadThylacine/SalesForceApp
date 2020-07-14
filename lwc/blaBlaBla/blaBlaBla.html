@@ -1,8 +1,10 @@
 <template>
-   <lightning-card title="ContactI" icon-name="custom:custom14">
-
-     <div class="Button 1 and 2">
-      <lightning-button variant="base" label="Base" title="Looks like a link" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
-     </div>
-    </lightning-card>
+<lightning-record-form
+        record-id={recordId}
+        object-api-name={Product__c}
+        fields={Name}
+        columns="2"
+        mode="edit"
+        onsubmit={handleSubmit}>
+</lightning-record-form>
 </template>

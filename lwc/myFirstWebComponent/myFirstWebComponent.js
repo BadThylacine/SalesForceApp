@@ -1,28 +1,10 @@
 import { LightningElement, wire, track} from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
 import USER_ID from '@salesforce/user/Id';
-import NAME_FIELD from '@salesforce/schema/User.Name'
+import NAME_FIELD from '@salesforce/schema/User.Name';
 import Id from '@salesforce/user/Id';
 export default class HelloIteration extends LightningElement {
-    @track
-    contacts = [
-        {
-            Id: 1,
-            Name: 'Emanuel Trenno',
-            Title: 'VP of Engineering',
-        },
-        {
-            Id: 2,
-            Name: 'Michael Jones',
-            Title: 'VP of Sales',
-        },
-        {
-            Id: 3,
-            Name: 'Jennifer Wu',
-            Title: 'CEO',
-        },
-    ];
-    queryTerm;
+
 
     handleKeyUp(evt) {
         const isEnterKey = evt.keyCode === 13;
@@ -56,8 +38,19 @@ export default class HelloIteration extends LightningElement {
             this.name = data.fields.Name.value;
         }
     }
- 
 
+ 
+    @track openmodel = false;
+    openmodal() {
+        this.openmodel = true
+    }
+    closeModal() {
+        this.openmodel = false
+    } 
+    saveMethod() {
+        alert('save method invoked');
+        this.closeModal();
+    }
 
 
 }

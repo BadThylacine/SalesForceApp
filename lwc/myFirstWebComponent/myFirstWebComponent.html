@@ -1,20 +1,13 @@
 <template>
     <lightning-card title="Test Mockup" icon-name="custom:custom14" style="border: 1px solid black;">
-      
-         
          <div style="border:1px solid black ; margin-left:40px; width: 400px;">
-            
                {name} &nbsp; &nbsp; &nbsp; &nbsp; {userId}
-            
          </div>
       
-
       <right>
          <div style="border:1px solid black ; margin-left:auto; margin-right:0; width: 400px;">
-            
                <lightning-button label="Create product" variant="brand" onclick={buttonFunc}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <lightning-button label="Cart" variant="brand" onclick={buttonFuncc}></lightning-button>
-            
          </div>
       </right>
 
@@ -49,10 +42,118 @@
             <li>-  Family 3</li>
           </ul>
          </div>
+
          <div style=" width:1000px; height:400px; border: 1px solid black; margin:10px; float:right">
             
+            <div style="border: 1px solid black; width:160px; height:120px; margin-left:2px;padding:10px;">
+               <lightning-record-view-form
+                  record-id="a022X00000juWaJQAU"
+                  object-api-name="Product__c">
+                     <div class="slds-box">
+                        <lightning-output-field field-name="Name"></lightning-output-field>
+
+                        <div class="slds-theme_default">
+                           <center>
+                           <lightning-button label="More" variant="brand" onclick={openmodal}></lightning-button>
+                           <template if:true={openmodel}>
+                           <div class="demo-only" style="height: 640px;">
+                               <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                                   <div class="slds-modal__container">
+                                       <header class="slds-modal__header">
+                                           <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                                               <lightning-icon icon-name="utility:close" size="medium">
+                                               </lightning-icon>
+                                               <span class="slds-assistive-text">Close</span>
+                                           </button>
+                                           
+                                       </header>
+                                       <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                        <lightning-record-view-form
+                                        record-id="a022X00000juWaJQAU"
+                                        object-api-name="Product__c">
+                                           <div class="slds-box">
+                                              <lightning-output-field field-name="Name"></lightning-output-field>
+                                              <lightning-output-field field-name="Description__c"></lightning-output-field>
+                                              <lightning-output-field field-name="Type__c"></lightning-output-field>
+                                              <lightning-output-field field-name="Family__c"></lightning-output-field>
+                                           </div>
+                                     </lightning-record-view-form>
+                                       </div>
+                                       <footer class="slds-modal__footer">
+                                           <lightning-button label="Cancel" variant="neutral" onclick={closeModal}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                       </footer>
+                                   </div>
+                               </section>
+                               <div class="slds-backdrop slds-backdrop_open"></div>
+                           </div>
+                           </template>
+                        </center>
+                       </div>
+
+                     </div>
+               </lightning-record-view-form>
+            </div>
+
+            
+            <div style="border: 1px solid black; width:160px; height:120px; margin-left:2px;padding:10px;" if:true={openmodal}>
+               
+               <lightning-record-view-form
+                  record-id="a022X00000juWaEQAU"
+                  object-api-name="Product__c">
+                     <div class="slds-box">
+                        <lightning-output-field field-name="Name"></lightning-output-field>
+                        
+                        <div class="slds-theme_default">
+                           <center>
+                           <lightning-button label="More" variant="brand" onclick={openmodal}></lightning-button>
+                           <template if:true={openmodel}>
+                           <div class="demo-only" style="height: 640px;">
+                               <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                                   <div class="slds-modal__container">
+                                       <header class="slds-modal__header">
+                                           <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                                               <lightning-icon icon-name="utility:close" size="medium">
+                                               </lightning-icon>
+                                               <span class="slds-assistive-text">Close</span>
+                                           </button>
+                                          
+                                       </header>
+                                       <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                                        <lightning-record-view-form
+                                        record-id="a022X00000juWaEQAU"
+                                        object-api-name="Product__c">
+                                           <div class="slds-box">
+                                              <lightning-output-field field-name="Name"></lightning-output-field>
+                                              <lightning-output-field field-name="Description__c"></lightning-output-field>
+                                              <lightning-output-field field-name="Type__c"></lightning-output-field>
+                                              <lightning-output-field field-name="Family__c"></lightning-output-field>
+                                              <lightning-output-field field-name="Price__c"></lightning-output-field>
+                                              <lightning-output-field field-name="Image__c"></lightning-output-field>
+                                           </div>
+                                     </lightning-record-view-form>
+                                       </div>
+                                       <footer class="slds-modal__footer">
+                                           <lightning-button label="Cancel" variant="neutral" onclick={closeModal}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                       </footer>
+                                   </div>
+                               </section>
+                               <div class="slds-backdrop slds-backdrop_open"></div>
+                           </div>
+                           </template>
+                        </center>
+                       </div>
+                     </div>
+               </lightning-record-view-form>
+               
+            </div>
+   
+
+
+
+
+
          </div>
-   </Div>
+   </div>
       <div class="Button 1 and 2">
          <lightning-button  onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
          <lightning-button  onclick={handleClick} class="slds-m-left_x-smalll"></lightning-button>
