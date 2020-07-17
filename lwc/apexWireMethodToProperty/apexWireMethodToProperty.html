@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="ApexWireMethodToProperty" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-input type="search" onchange={handleKeyChange} class="slds-m-bottom_small" label="Search" value={searchKey}></lightning-input>
+            <template if:true={products.data}>
+                <template for:each={products.data} for:item="product">
+                    <p key={product.Id}>{product.Name}</p>
+                </template>
+            </template>
+            <template if:true={products.error}>
+               
+            </template>
+        </div>
+    </lightning-card>
+</template>

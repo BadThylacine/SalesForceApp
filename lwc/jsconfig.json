@@ -20,6 +20,18 @@
             ],
             "c/accountName": [
                 "accountName/accountName.js"
+            ],
+            "c/apexWireMethodToProperty": [
+                "apexWireMethodToProperty/apexWireMethodToProperty.js"
+            ],
+            "c/apexImperativeMethod": [
+                "apexImperativeMethod/apexImperativeMethod.js"
+            ],
+            "c/createObject": [
+                "createObject/createObject.js"
+            ],
+            "c/createSimple": [
+                "createSimple/createSimple.js"
             ]
         }
     },

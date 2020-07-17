@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="ApexImperativeMethod" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <p class="slds-m-bottom_small">
+                <lightning-button label="Load Products" onclick={handleLoad5}></lightning-button>
+            </p>
+            <template if:true={products}>
+                <template for:each={products} for:item="product">
+                    <p key={product.Id}>{product.Name}</p>
+                </template>
+            </template>
+            <template if:true={error}>
+               
+            </template>
+        </div>
+    </lightning-card>
+</template>
