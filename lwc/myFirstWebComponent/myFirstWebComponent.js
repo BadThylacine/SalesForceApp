@@ -4,15 +4,16 @@ import USER_ID from '@salesforce/user/Id';
 import NAME_FIELD from '@salesforce/schema/User.Name';
 import Id from '@salesforce/user/Id';
 import NAME_FIELDd from '@salesforce/schema/Account.Name';
-import getContactListt from '@salesforce/apex/ContactControllerr.getContactList';
-import getContactListtt from '@salesforce/apex/ContactControllerr.getContactListt';
-import getContactListttt from '@salesforce/apex/ContactControllerr.getContactListtt';
-import getContactListtttt from '@salesforce/apex/ContactControllerr.getContactListttt';
-import getContactListttttt from '@salesforce/apex/ContactControllerr.getContactListtttt';
-import getContactListtttttt from '@salesforce/apex/ContactControllerr.getContactListttttt';
+import getContactListt from '@salesforce/apex/ContactControllerr.getContactListt';
+import getContactListtt from '@salesforce/apex/ContactControllerr.getContactListtt';
+import getContactListttt from '@salesforce/apex/ContactControllerr.getContactListttt';
+import getContactListtttt from '@salesforce/apex/ContactControllerr.getContactListtttt';
+import getContactListttttt from '@salesforce/apex/ContactControllerr.getContactListttttt';
+import getContactListtttttt from '@salesforce/apex/ContactControllerr.getContactListtttttt';
+
 
 import findContacts from '@salesforce/apex/ContactController.findContacts';
-import IDd from '@salesforce/schema/Account.AccountNumber';
+import Idd from '@salesforce/schema/Account.AccountNumber';
 import NAME_prod from '@salesforce/schema/Product__c.Name';
 import Desctipt from '@salesforce/schema/Product__c.Description__c';
 import Price_field from '@salesforce/schema/Product__c.Price__c';
@@ -40,12 +41,13 @@ export default class HelloIteration extends LightningElement {
     }
 
     userId = Id;
+    //name = Id;
 
-    @track error ;
+    @track error;
     @track name;
     @wire(getRecord, {
-        recordId: IDd,
-        fields: [NAME_FIELDd]
+        recordId: Id,
+        fields: [NAME_FIELDd, Id]
     }) wireuser({
         error,
         data
@@ -59,12 +61,19 @@ export default class HelloIteration extends LightningElement {
 
  
     @track openmodel = false;
+    @track openmodel1 = false;
+    openmodal1() {
+        this.openmodel1 = true
+    }
     openmodal() {
         this.openmodel = true
     }
     closeModal() {
         this.openmodel = false
     } 
+    closeModal1() {
+        this.openmodel1 = false
+    }
     saveMethod() {
         alert('save method invoked');
         this.closeModal();
@@ -84,115 +93,69 @@ export default class HelloIteration extends LightningElement {
     }
 
 
-@track products
+    @track productss;
+    @track error;
 
-handleLoad1() {
-    getContactListt()
-        .then(result => {
-            this.products = result;
-        })
-        .catch(error => {
-            this.error = error;
-        });
-}
-
-handleLoad2() {
-    getContactListtt()
-        .then(result => {
-            this.products = result;
-        })
-        .catch(error => {
-            this.error = error;
-        });
-}
-
-handleLoad3() {
-    getContactListttt()
-        .then(result => {
-            this.products = result;
-        })
-        .catch(error => {
-            this.error = error;
-        });
-}
-
-
-
-handleLoad4() {
-    getContactListtttt()
-        .then(result => {
-            this.products = result;
-        })
-        .catch(error => {
-            this.error = error;
-        });
-}
-
-handleLoad5() {
-    getContactListttttt()
-        .then(result => {
-            this.products = result;
-        })
-        .catch(error => {
-            this.error = error;
-        });
-}
-
-handleLoad6() {
-    getContactListtttttt()
-        .then(result => {
-            this.products = result;
-        })
-        .catch(error => {
-            this.error = error;
-        });
-}
-
-
-
-
-
-/*
-
-
-
-    acco = '';
-    namee = '';
-
-    handleNameChange(event) {
-        this.acco = event.target.value;
-        this.namee = event.target.value;
-    }
-    createAccount() {
-        const fields = {};
-        fields[NAME_prod.fieldApiName] = this.namee;
-        const recordInput = { apiName: NAME_prod.objectApiName, fields };
-        createRecord(recordInput)
-            .then(account => {
-                this.acco = account;
-                this.dispatchEvent(
-                    new ShowToastEvent({
-                        title: 'Success',
-                        message: 'created',
-                        variant: 'success',
-                    }),
-                );
+    handleLoad1() {
+        getContactListt()
+            .then(result => {
+                this.productss = result;
             })
             .catch(error => {
-                this.dispatchEvent(
-                    new ShowToastEvent({
-                        title: 'Error creating record',
-                        message: error.body.message,
-                        variant: 'error',
-                    }),
-                );
+                this.error = error;
+            });
+    }
+
+    handleLoad2() {
+        getContactListtt()
+            .then(result => {
+                this.productss = result;
+            })
+            .catch(error => {
+                this.error = error;
+            });
+    }
+
+    handleLoad3() {
+        getContactListttt()
+            .then(result => {
+                this.productss = result;
+            })
+            .catch(error => {
+                this.error = error;
+            });
+    }
+
+    handleLoad4() {
+        getContactListtttt()
+            .then(result => {
+                this.productss = result;
+            })
+            .catch(error => {
+                this.error = error;
+            });
+    }
+
+    handleLoad5() {
+        getContactListttttt()
+            .then(result => {
+                this.productss = result;
+            })
+            .catch(error => {
+                this.error = error;
             });
     }
 
 
-
-*/
-
+    handleLoad6() {
+        getContactListtttttt()
+            .then(result => {
+                this.productss = result;
+            })
+            .catch(error => {
+                this.error = error;
+            });
+    }
 
 
 

@@ -1,10 +1,31 @@
 <template>
-    <lightning-record-view-form
-            record-id="a022X00000juWaJQAU"
-            object-api-name="Product__c">
-        <div class="slds-box" style="border: 1px solid black; width:50px; height:50px;">
-            <lightning-output-field field-name="Name"></lightning-output-field>
-            
+    <lightning-button label="Cart" variant="brand" onclick={openmodall}></lightning-button>
+    <template if:true={openmodell}>
+        <div class="demo-only" style="height: 640px;">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                            <lightning-record-edit-form object-api-name="Product__c">
+                                <lightning-messages>
+                                </lightning-messages>
+                                <lightning-input-field field-name="Name">
+                                </lightning-input-field>
+                            </lightning-record-edit-form>
+
+                            <lightning-record-edit-form object-api-name="Order__c">
+                                <lightning-messages>
+                                </lightning-messages>
+                                <lightning-input-field field-name="TotalPrice__c">
+                                </lightning-input-field>
+                            </lightning-record-edit-form>
+
+                            <lightning-button class="slds-m-top_small" type="submit" label="checkout"></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <lightning-button class="slds-m-top_small" label="Close"  onclick={closeModall}></lightning-button>
+                        </div>
+                </div>
+            </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
         </div>
-    </lightning-record-view-form>
+    </template>
 </template>

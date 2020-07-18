@@ -1,6 +1,6 @@
 public with sharing class ContactControllerr {
     @AuraEnabled(cacheable=true)
-    public static List<Product__c> getContactList() {
+    public static List<Product__c> getContactListt() {
         return [
             SELECT Name
             FROM Product__c
@@ -9,7 +9,7 @@ public with sharing class ContactControllerr {
         ];
     }
     @AuraEnabled(cacheable=true)
-    public static List<Product__c> getContactListt() {
+    public static List<Product__c> getContactListtt() {
         return [
             SELECT Name
             FROM Product__c
@@ -18,11 +18,11 @@ public with sharing class ContactControllerr {
         ];
     }
     @AuraEnabled(cacheable=true)
-    public static List<Product__c> getContactListtt() {
+    public static List<Product__c> getContactListttt() {
         return [
             SELECT Name
             FROM Product__c
-            WHERE Family__c = 'Type 3'
+            WHERE Type__c = 'Type 3'
 
         ];
     }
@@ -30,7 +30,7 @@ public with sharing class ContactControllerr {
 
 
     @AuraEnabled(cacheable=true)
-    public static List<Product__c> getContactListttt() {
+    public static List<Product__c> getContactListtttt() {
         return [
             SELECT Name
             FROM Product__c
@@ -40,7 +40,7 @@ public with sharing class ContactControllerr {
     }
 
     @AuraEnabled(cacheable=true)
-    public static List<Product__c> getContactListtttt() {
+    public static List<Product__c> getContactListttttt() {
         return [
             SELECT Name
             FROM Product__c
@@ -49,7 +49,7 @@ public with sharing class ContactControllerr {
         ];
     }
     @AuraEnabled(cacheable=true)
-    public static List<Product__c> getContactListttttt() {
+    public static List<Product__c> getContactListtttttt() {
         return [
             SELECT Name
             FROM Product__c

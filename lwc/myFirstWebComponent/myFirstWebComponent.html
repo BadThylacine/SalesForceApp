@@ -1,151 +1,178 @@
 <template>
     <lightning-card style="border: 1px solid black;">
-         <div style="border:1px solid black ; margin-left:40px; width: 400px;">
+         <div style="border:1px solid black ; margin-left:40px; width: 800px;">
                {name} &nbsp; &nbsp; &nbsp; &nbsp; {userId}
-         </div>
-      
+         
+        
       <right>
-         <div style="border:1px solid black ; margin-left:auto; margin-right:0; width: 400px;">
+         <div style="border:1px solid black ; margin-left:auto; margin-right:0; width: 400px;height:40px">
             <lightning-button label="Create product" variant="brand" onclick={openmodal}></lightning-button>
-            <template if:true={openmodel}>
-            <div class="demo-only" style="height: 640px;">
-                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
-                    <div class="slds-modal__container">
-                        <header class="slds-modal__header">
-                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
-                                <lightning-icon icon-name="utility:close" size="medium">
-                                </lightning-icon>
-                                <span class="slds-assistive-text">Close</span>
-                            </button>
+                <template if:true={openmodel}>
+                    <div class="demo-only" style="height: 640px;">
+                        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                            <div class="slds-modal__container">
+                                <header class="slds-modal__header">
+                                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                                        <lightning-icon icon-name="utility:close" size="medium">
+                                        </lightning-icon>
+                                            <span class="slds-assistive-text">Close</span>
+                                    </button>
+                                </header>
+                                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                        <lightning-record-view-form
+                                        record-id="a022X00000juWaJQAU"
+                                        object-api-name="Product__c">
+                                           <div class="slds-box">
+                                              <lightning-output-field field-name="Name"></lightning-output-field>
+
+                                           </div>
+                                     </lightning-record-view-form>
                             
-                        </header>
-                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-                            
-                                <lightning-record-edit-form object-api-name="Product__c">
-                                    <lightning-messages>
-                                    </lightning-messages>
-                                    <lightning-input-field field-name="Name">
-                                    </lightning-input-field>
-                                    <lightning-input-field field-name="Description__c">
-                                    </lightning-input-field>
-                                    <lightning-input-field field-name="Price__c">
-                                    </lightning-input-field>
-                            
-                                        <lightning-button
-                                            class="slds-m-top_small"
-                                            type="submit"
-                                            label="save">
-                                        </lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <lightning-button class="slds-m-top_small" label="Cancel"  onclick={closeModal}></lightning-button>
-                                </lightning-record-edit-form>
-                            
-                        </div>
-                        <!--<footer class="slds-modal__footer">
-                            <lightning-button label="Cancel" variant="neutral" onclick={closeModal}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
-                        </footer>-->
+                                            <lightning-button
+                                                class="slds-m-top_small"
+                                                type="submit"
+                                                label="save">
+                                            </lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <lightning-button 
+                                                class="slds-m-top_small" 
+                                                label="Cancel"  
+                                                onclick={closeModal}></lightning-button>
+                                            
+                                    </div>
+                            </div>
+                        </section>
+                                <div class="slds-backdrop slds-backdrop_open"></div>
                     </div>
-                </section>
-                <div class="slds-backdrop slds-backdrop_open"></div>
-            </div>
-            </template>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <lightning-button label="Cart" variant="brand" onclick={buttonFuncc}></lightning-button>
-         </div>
+                </template>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+            <lightning-button label="Cart" variant="brand" onclick={openmodal1}></lightning-button>
+                <template if:true={openmodel1}>
+                    <div class="demo-only" style="height: 640px;">
+                        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                            <div class="slds-modal__container">
+                                <header class="slds-modal__header">
+                                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal1}>
+                                    <lightning-icon icon-name="utility:close" size="medium">
+                                    </lightning-icon>
+                                        <span class="slds-assistive-text">Close</span>
+                                    </button>
+                            
+                                </header>
+                                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                                        <lightning-record-edit-form object-api-name="Product__c">
+                                            <lightning-messages>
+                                            </lightning-messages>
+                                            <lightning-input-field field-name="Name">
+                                            </lightning-input-field>
+                                        </lightning-record-edit-form>
+
+                                        <lightning-record-edit-form object-api-name="Order__c">
+                                            <lightning-messages>
+                                            </lightning-messages>
+                                            <lightning-input-field field-name="TotalPrice__c">
+                                            </lightning-input-field>
+                                        </lightning-record-edit-form>
+
+                                        <lightning-button class="slds-m-top_small" type="submit" label="checkout"></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <lightning-button class="slds-m-top_small" label="Close"  onclick={closeModal1}></lightning-button>
+                                    </div>
+                            </div>
+                        </section>
+                            <div class="slds-backdrop slds-backdrop_open"></div>
+                    </div>
+                </template>
+        </div>
       </right>
 
    
 
 <Div class="filterandlist" style="display: inline-block;">
-      <!--
-    
-        <lightning-card title="ApexImperativeMethod" icon-name="custom:custom63">
-            <div class="slds-m-around_medium">
-                <p class="slds-m-bottom_small">
-                    <lightning-button label="Load Products" onclick={handleLoad}></lightning-button>
-                </p>
-                <template if:true={products}>
-                    <template for:each={products} for:item="product">
-                        <p key={product.Id}>{product.Name}</p>
-                    </template>
-                </template>
-                <template if:true={error}>
-                   
-                </template>
-            </div>
-        </lightning-card>
-    
--->
+  
 
-
-
-
-
-         <div class="FilterForm" style="float:left; margin-left:10px; margin-right:50px; border: 1px solid black; height: 400px; width: 150px">
+        <div class="FilterForm" style="float:left; margin-left:10px; margin-right:50px; border: 1px solid black; height: 400px; width: 120px">
             <h2>&nbsp; &nbsp;Filter</h2>
-            <p>Type</p>
+            <p>&nbsp;Type</p>
           <ul>
             <li><lightning-button label="- Type 1" onclick={handleLoad1}></lightning-button></li>
             <li><lightning-button label="- Type 2" onclick={handleLoad2}></lightning-button></li>
             <li><lightning-button label="- Type 3" onclick={handleLoad3}></lightning-button></li>
           </ul>
-            <p>Family</p>
+            <p>&nbsp;Family</p>
           <ul>
             <li><lightning-button label="- Family 1" onclick={handleLoad4}></lightning-button></li>
             <li><lightning-button label="- Family 2" onclick={handleLoad5}></lightning-button></li>
-            <li> <lightning-button label="- Family 3" onclick={handleLoad6}></lightning-button>                    
-               <!-- <template if:true={products}>
-                <template for:each={products} for:item="product">
-                    <p key={product.Id}>{product.Name}</p>
-                </template>
-            </template>
-            <template if:true={error}>
-             
-            </template>--></li>
+            <li><lightning-button label="- Family 3" onclick={handleLoad6}></lightning-button></li>
           </ul>
-        <div>
+        <!--
+          <template if:true={products}>
+            <template for:each={products} for:item="product">
+                <p key={product.Id}>{product.Name}</p>
+            </template>
+        </template>
+        <template if:true={error}>
+           
+        </template>
+-->
 
-            </div>
+</div>
 
         </div>
 
-         <div style=" width:1000px; height:450px; border: 1px solid black; margin:10px; float:right">
-            
-            
+            <div style=" width:900px; height:400px; border: 1px solid black; margin:10px; float:right">
 
                   <lightning-card>
                       <div class="slds-m-around_medium" style="margin-top: 1px;">
 
                           <lightning-input type="search" onchange={handleKeyChange} class="slds-m-bottom_small" label="Search" value={searchKey}></lightning-input>
-                          <!--
-
-                                    <template if:true={products}>
-                                        <template for:each={products} for:item="product">
-                                            <p key={product.Id}>{product.Name}</p>
-                                        </template>
-                                    </template>
-                                    <template if:true={error}>
-                                
-                                    </template>
-
-                          -->
                           
-                          
-                          
-                          
-                          <template if:true={products.data}>
+                            <template if:true={products.data}>
                               <template for:each={products.data} for:item="product">
-                                  <div style="text-align:center; margin-top:5px;margin-bottom:auto; border: 1px solid black; width:100px; height:100px;" key={product.Id}>{product.Name}</div>
+                                  <div style="text-align:center; margin-top:5px;margin-bottom:auto; border: 1px solid black; width:150px; height:100px;" key={product.Id}>{product.Name}
+
+                                    
+                                    <lightning-button label="Details" variant="brand" onclick={openmodal} style="margin-bottom: 1px;margin-top:30px;float:left;"></lightning-button>
+                                        <template if:true={openmodel}>
+                                        <div class="demo-only" style="height: 640px;">
+                                            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                                                <div class="slds-modal__container">
+                                                    <header class="slds-modal__header">
+                                                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                                                            <lightning-icon icon-name="utility:close" size="medium">
+                                                            </lightning-icon>
+                                                            <span class="slds-assistive-text">Close</span>
+                                                        </button>
+             
+                                                    </header>
+                                                    <div class="slds-modal__content slds-p-around_medium">
+                                                        <lightning-record-view-form
+                                                            record-id="a022X00000juWaJQAU"
+                                                            object-api-name="Product__c">
+                                                                <div class="slds-box">
+                                                                    <lightning-output-field field-name="Name"></lightning-output-field>
+                                                                    <lightning-output-field field-name="Description__c"></lightning-output-field>
+                                                                    <lightning-output-field field-name="Type__c"></lightning-output-field>
+                                                                    <lightning-output-field field-name="Family__c"></lightning-output-field>
+                                                                </div>
+                                                        </lightning-record-view-form>
+                                                    </div>
+                                                        <footer class="slds-modal__footer">
+                                                            <lightning-button label="Cancel" variant="neutral" onclick={closeModal}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        </footer>
+                                                </div>
+                                            </section>
+                                                <div class="slds-backdrop slds-backdrop_open"></div>
+                                        </div>
+                                        </template>
+                                  </div>
                               </template>
-                          </template>
+                            </template>
                           <template if:true={products.error}>
-                             
                           </template>
                       </div>
                   </lightning-card>
-              
 
-
-         </div>
-   </div>
-
-     </lightning-card>
+            </div>
+        </div>
+    </lightning-card>
 </template>

@@ -1,17 +1,43 @@
 <template>
-    <lightning-card title="ApexImperativeMethod" icon-name="custom:custom63">
-        <div class="slds-m-around_medium">
-            <p class="slds-m-bottom_small">
-                <lightning-button label="Load Products" onclick={handleLoad5}></lightning-button>
-            </p>
-            <template if:true={products}>
-                <template for:each={products} for:item="product">
-                    <p key={product.Id}>{product.Name}</p>
-                </template>
+<div class="FilterForm" style="float:left; margin-left:10px; margin-right:50px; border: 1px solid black; height: 400px; width: 120px">
+    <h2>&nbsp; &nbsp;Filter</h2>
+    <p>&nbsp;Type</p>
+  <ul>
+    <li><lightning-button label="- Type 1" onclick={handleLoad1}></lightning-button></li>
+    <li><lightning-button label="- Type 2" onclick={handleLoad2}></lightning-button></li>
+    <li><lightning-button label="- Type 3" onclick={handleLoad3}></lightning-button></li>
+  </ul>
+    <p>&nbsp;Family</p>
+  <ul>
+    <li><lightning-button label="- Family 1" onclick={handleLoad4}></lightning-button></li>
+    <li><lightning-button label="- Family 2" onclick={handleLoad5}></lightning-button></li>
+    <li><lightning-button label="- Family 3" onclick={handleLoad6}></lightning-button></li>
+  </ul>
+  <template if:true={products}>
+    <template for:each={products} for:item="product">
+        <p key={product.Id}>{product.Name}</p>
+    </template>
+</template>
+<template if:true={error}>
+   
+</template>
+<!--<div>
+    </div>
+
+    
+    <div class="slds-m-around_medium">
+        <p class="slds-m-bottom_small">
+            <lightning-button label="Load" onclick={handleLoad1}></lightning-button>
+        </p>
+        <template if:true={products}>
+            <template for:each={products} for:item="product">
+                <p key={product.Id}>{product.Name}</p>
             </template>
-            <template if:true={error}>
-               
-            </template>
-        </div>
-    </lightning-card>
+        </template>
+        <template if:true={error}>
+           
+        </template>
+    </div>
+-->
+</div>
 </template>
